@@ -3,8 +3,10 @@ import lxml.html as html
 import os
 import datetime
 
+# website link
 HOME_URL = 'https://www.larepublica.co/'
 
+# contants from links
 XPATH_LINK_TO_ARTICULE = '//div[contains(@class, "V")]/a[contains(@class, "kicker")]/@href'
 XPATH_TITLE = '//div[@class="col order-2"]/h2/span/text()'
 XPATH_SUMMARY = '//div[@class="lead"]/p/text()'
@@ -39,9 +41,10 @@ def parse_notice(link, today):
     except ValueError as ve:
         print(ve)
 
-
+# function to extract news from home page
 def parse_home():
     try:
+        # html response (including headers)
         response = requests.get(HOME_URL)
         if response.status_code == 200:
             home = response.content.decode('utf-8')
@@ -60,10 +63,10 @@ def parse_home():
     except ValueError as ve:
         print(ve)
 
-
+# main function
 def run():
     parse_home()
 
-
+# entry point
 if __name__ == "__main__":
     run()
