@@ -1,0 +1,6 @@
+Links = //div[contains(@class, "V")]/a[contains(@class, "kicker")]/@href
+Titulo = //div[@class="col order-2"]/h2/span/text()
+Resumne = //div[@class="lead"]/p/text()
+Cuerpo = //div[@class="html-content"]/p[not(@class)]/text()
+
+//div[contains(@class, "V")]/a[contains(@class, "kicker")]/@href
